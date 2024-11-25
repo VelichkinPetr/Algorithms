@@ -24,7 +24,7 @@ def check_input_type(numbers):
 def check_input_range(numbers):
     for number in numbers:
         if number not in range(1,2*10**4+1):
-            raise ValueError('Значения в списке должны быть в диапазоне от -2*10^4 до 2*10^4')
+            raise ValueError('Значения в списке должны быть в диапазоне от 1 до 2*10^4')
     return True
 
 def get_min_common_elem(numbers):

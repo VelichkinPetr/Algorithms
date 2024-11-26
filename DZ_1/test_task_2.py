@@ -51,3 +51,7 @@ def test_ideal_input_list():
 def test_expected_input_list():
     numbers = [55 , 4 ,67, 4 ,8, 3 , 4 ,9, 55 , 3 ,1, 55 , 3]
     assert task_2.min_frequent_elem(numbers) == 3
+
+def test_max_len_list():
+    numbers = [i for i in range(10 ** 5 + 1)]
+    assert task_2.min_frequent_elem(numbers) == []

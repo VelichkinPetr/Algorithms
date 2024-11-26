@@ -47,3 +47,7 @@ def test_max_numbers_not_in_allowed_range():
 def test_correct_input_list():
     numbers = [-20000, 1, -3, 4, -5, 20000]
     assert task_1.sum_even_numbers_in_list(numbers) == 4
+
+def test_max_len_list():
+    numbers = [i for i in range(10 ** 5 + 1)]
+    assert task_1.sum_even_numbers_in_list(numbers) == 0

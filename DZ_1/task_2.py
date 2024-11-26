@@ -2,6 +2,7 @@ def min_frequent_elem(numbers:list[int]) -> int:
     try:
         check_input_type(numbers)
         check_empty_input(numbers)
+        check_len_list(numbers)
         check_input_range(numbers)
     except TypeError:
         return []
@@ -19,6 +20,10 @@ def check_input_type(numbers):
         for number in numbers:
             if not isinstance(number,int):
                 raise TypeError('Значения в списке должны быть типа INT')
+    return True
+def check_len_list(numbers):
+    if len(numbers) > 10**5:
+        raise ValueError('Максимальное количество элементов в списке = 10^5')
     return True
 
 def check_input_range(numbers):

@@ -1,12 +1,8 @@
 def indexes_elements_get_target_sum(nums:list[int], target:int) -> list[int]:
-    try:
-        check_input_type(nums,target)
-        check_len_list(nums)
-        check_input_range(nums, target)
-    except TypeError:
-        return []
-    except ValueError:
-        return []
+    check_input_type(nums,target)
+    check_len_list(nums)
+    check_input_range(nums, target)
+
     rezult = indexes_elements(nums, target)
     return rezult
 

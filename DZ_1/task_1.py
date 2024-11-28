@@ -1,12 +1,9 @@
 def sum_even_numbers_in_list(numbers:list[int]) -> int:
-    try:
-        check_input_type(numbers)
-        check_len_list(numbers)
-        check_input_range(numbers)
-    except TypeError:
-        return 0
-    except ValueError:
-        return 0
+
+    check_input_type(numbers)
+    check_len_list(numbers)
+    check_input_range(numbers)
+
     sum = sum_even(numbers)
     sum = check_negative_sum(sum)
     return sum

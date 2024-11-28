@@ -1,13 +1,10 @@
 def min_frequent_elem(numbers:list[int]) -> int:
-    try:
-        check_input_type(numbers)
-        check_empty_input(numbers)
-        check_len_list(numbers)
-        check_input_range(numbers)
-    except TypeError:
-        return []
-    except ValueError:
-        return []
+
+    check_input_type(numbers)
+    check_empty_input(numbers)
+    check_len_list(numbers)
+    check_input_range(numbers)
+
     rezult = get_min_common_elem(numbers)
     return rezult
 

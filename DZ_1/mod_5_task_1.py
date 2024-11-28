@@ -1,11 +1,6 @@
 def factorial(n:int) -> int:
-    try:
-        check_input_type(n) #1
-        check_input_range(n) #1
-    except TypeError:
-        return 0
-    except ValueError:
-        return 0
+    check_input_type(n) #1
+    check_input_range(n) #1
     return rezult(n) #1 or (1+n*1) = 1 or (1+n) = n
 
 def check_input_type(n):

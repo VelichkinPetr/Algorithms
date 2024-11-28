@@ -1,11 +1,6 @@
 def fibonacci(n):
-    try:
-        check_input_type(n) #1
-        check_input_range(n) #1
-    except TypeError:
-        return []
-    except ValueError:
-        return []
+    check_input_type(n) #1
+    check_input_range(n) #1
     return rezult(n) # 1 or 3+(n-2)*4 = n
 
 def check_input_type(n):
@@ -27,9 +22,9 @@ def rezult(n):
         elem_1 = 1 #1
         elem_2 = 1 #1
         list_fib = [0,elem_1,elem_2] #1
-        for i in range(2, n):# n-1
+        for i in range(2, n):# n-2
             elem_1, elem_2 = elem_2, elem_1 + elem_2 #3
             list_fib.append(elem_2) #1
         return list_fib
 
-# 1+1+n = 2+n = O(n) - линейная сложность
+# 1+1+3+(n-2)*4 = 4n-3 = O(n) - линейная сложность

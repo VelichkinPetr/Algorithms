@@ -29,9 +29,12 @@ def take_max_elem(list,start,end):
     return max_elem,index_absolute,index_relative
 
 def check_input_range(list,start,end):
-    if len(list)-1 < end or len(list) == 0 or len(list)-1 < start:
+    if len(list) == 0:
+        raise ValueError('Список не должен быть пуст')
+    elif len(list)-1 < end or len(list)-1 < start:
         raise ValueError('Длина списка должна быть больше правой границы интервала поиска')
     elif start < 0 or end < 0:
         raise ValueError('Индекс должен быть положительным целым числом')
     elif start > end:
         raise ValueError('START должен быть больше END')
+

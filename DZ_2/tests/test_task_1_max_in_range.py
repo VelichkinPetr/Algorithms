@@ -19,6 +19,7 @@ def test_positive(input_data,expected):
                              (([1,2,5,22,8,12,3],-1,3), ValueError),
                              (([1,2,5,22,8,12,3],1,-3), ValueError),
                              (([''],1,3), TypeError),
+                             (([],0,0), ValueError),
                              (([1,2,5,22,8,12,3],1,7), ValueError),
                              (([1,2,5,22,8,12,3],7,3), ValueError)
                          ])

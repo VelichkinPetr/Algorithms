@@ -41,5 +41,3 @@ def get_formatted_list(array, k):
         array[-i - 1] = buff
 
     return array
-
-print(rotate_and_reverse([2,'3',7,],2))

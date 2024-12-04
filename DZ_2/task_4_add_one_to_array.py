@@ -53,5 +53,3 @@ def add_one(digit):
         add.append(digit % 10)
         digit //= 10
     return add
-
-print(add_one_to_array([i for i in range(9,10)]*100))

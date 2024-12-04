@@ -28,4 +28,3 @@ def polindrome(x,len_int):
             return False
     return True
 # 1 + 1 + 2n + 7*(n//2 + 1) = 2 + 2n + 3,5n + 7 = 5,5n + 9 = O(n) - линейная сложность
-print(is_palindrome(-1))

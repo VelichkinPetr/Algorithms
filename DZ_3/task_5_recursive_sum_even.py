@@ -6,6 +6,3 @@ def recursive_sum_even(array):
         return array[0]
     rec = recursive_sum_even(array[1:])
     return array[0]+ rec
-
-
-print(recursive_sum_even([]))

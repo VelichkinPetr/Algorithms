@@ -56,13 +56,3 @@ class PrintQueue:
                 print(iterator.data)
         else:
             print('Список пуст')
-
-doc1 = PrintDocument('1',111)
-doc2 = PrintDocument('2',222)
-doc3 = PrintDocument('3',333)
-
-queue = PrintQueue()
-queue.enqueue(doc1)
-queue.enqueue(doc2)
-queue.enqueue(doc3)
-queue.__str__()

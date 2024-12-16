@@ -44,14 +44,14 @@ class DList:
                 return i
         return -1
 
-    def index(self,item):
+    def __index(self,item):
         if self.find(item) == -1:
             raise ValueError
         else:
             return self.find(item)
 
     def remove_of_index(self,index):
-        if index <= self.count-1:
+        if index <= self.count-1 and index >= 0:
             for j in range(index, self.count-1, 1):
                 self.array[j] = self.array[j + 1]
             del self.array[self.count-1]
@@ -61,7 +61,7 @@ class DList:
             raise IndexError
 
     def remove(self,item):
-        index_item = self.index(item)
+        index_item = self.__index(item)
         self.remove_of_index(index_item)
 
     def count_item(self,item):
@@ -75,12 +75,12 @@ class DList:
         if self.count == self.size:
             new_array = self.__memory_allocation()
             self.array = new_array
-        self.count += 1
-
-        for i in range(index, self.count, 1):
-            buff = self.array[self.count -1 - i]
-            self.array[self.count - i] = buff
-        self.array[index] = item
+        if index <= self.count-1:
+            for i in range(self.count-1,index-1, -1):
+                self.array[i+1] = self.array[i]
+            self.array[index] = item
+            self.count += 1
+        else: self.array[self.count] = item
 
     def is_empty(self):
         if self.count_item(None) == self.size:

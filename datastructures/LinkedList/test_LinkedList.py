@@ -123,6 +123,24 @@ def test_remove_position(input_data,expected):
 
 @pytest.mark.parametrize('input_data, expected',
                          [
+                             (0, False),
+                             (1, True),
+                             (2, True),
+                             (3, True),
+                             (4, True),
+                             (5, False),
+                             ('', False),
+                             ([], False),
+                         ])
+
+def test_search(input_data,expected):
+    l = LinkedList()
+    for i in range(1,5):
+        l.add(i)
+    assert l.search(input_data) == expected
+
+@pytest.mark.parametrize('input_data, expected',
+                         [
                              (0, []),
                              (1, []),
                              (2, []),
@@ -150,5 +168,4 @@ def test_is_empty(input_data,expected):
     l = LinkedList()
     for i in range(0,input_data):
         l.add(i)
-
     assert l.is_empty() == expected

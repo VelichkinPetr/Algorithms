@@ -10,7 +10,7 @@ class LinkedList:
         self.size = 0
         self.head = None
 
-    def add_head(self,item)-> None:
+    def add_head(self,item:any)-> None:
         node = Node(data=item, next=None)
 
         if self.size == 0:
@@ -20,7 +20,7 @@ class LinkedList:
             self.head = node
         self.size+=1
 
-    def add(self,item)-> None:
+    def add(self,item:any)-> None:
         node = Node(data=item, next=None)
 
         if self.size == 0:
@@ -35,7 +35,7 @@ class LinkedList:
 
         self.size += 1
 
-    def insert(self,item, position:int):
+    def insert(self,item:any, position:int)-> None:
         node = Node(data=item, next=None)
 
         if position < 1 or position > self.size:
@@ -55,7 +55,7 @@ class LinkedList:
         iterator.next = node
         self.size += 1
 
-    def remove_head(self) :
+    def remove_head(self) -> any:
         if not self.is_empty():
             data = self.head.data
             self.head = self.head.next
@@ -63,7 +63,7 @@ class LinkedList:
             return data
         return ValueError
 
-    def remove(self):
+    def remove(self) -> any:
         if not self.is_empty():
             iterator = self.head
             counter = 1
@@ -83,7 +83,7 @@ class LinkedList:
             self.size -= 1
             return data
 
-    def remove_position(self,position) -> None:
+    def remove_position(self,position:int) -> any:
         if position < 1 or position > self.size:
             raise IndexError
         elif position == 1:
@@ -104,6 +104,18 @@ class LinkedList:
         self.size += 1
         return data
 
+    def search(self, item:any) -> bool:
+        if not self.is_empty():
+            iterator = self.head
+            while iterator.next != None:
+                if iterator.data == item:
+                    return True
+                elif iterator.next.data == item:
+                    return True
+
+                iterator = iterator.next
+        return False
+
     def clear(self) -> None:
         self.head = None
         self.size = 0
@@ -113,7 +125,7 @@ class LinkedList:
             return True
         return False
 
-    def print_LinkedList(self) -> None:
+    def print_LinkedList(self) -> list:
         if not self.is_empty():
             iterator = self.head
             rez = [iterator.data]
@@ -123,12 +135,3 @@ class LinkedList:
             return rez
         else:
             return []
-
-l = LinkedList()
-l.add(1)
-l.add(2)
-l.remove()
-
-print(l.size)
-r = l.print_LinkedList()
-print(r)

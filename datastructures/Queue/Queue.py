@@ -9,7 +9,7 @@ class Queue:
         self.head = None
         self.tail = None
 
-    def enqueue(self,item:any) -> any: #Добавляет элемент в конец очереди.
+    def enqueue(self,item:any) -> None: #Добавляет элемент в конец очереди.
         node = Node(data=item, next=None)
         if self.is_empty():
             self.head = node

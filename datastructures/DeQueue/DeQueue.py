@@ -10,7 +10,7 @@ class DeQueue:
         self.head = None
         self.tail = None
 
-    def pushFront(self,item:any) -> any: #Добавляет элемент в начало очереди.
+    def pushFront(self,item:any) -> None: #Добавляет элемент в начало очереди.
         node = Node(data=item, next=None, prev=None)
         if self.is_empty():
             self.head = node
@@ -22,7 +22,7 @@ class DeQueue:
 
         self.size += 1
 
-    def pushBack(self,item:any) -> any: #Добавляет элемент в конец очереди.
+    def pushBack(self,item:any) -> None: #Добавляет элемент в конец очереди.
         node = Node(data=item, next=None, prev=None)
         if self.is_empty():
             self.head = node

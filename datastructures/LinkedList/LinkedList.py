@@ -38,11 +38,10 @@ class LinkedList:
     def insert(self,item:any, position:int)-> None:
         node = Node(data=item, next=None)
 
+        if position == 1:
+            return self.add_head(item)
         if position < 1 or position > self.size:
             raise IndexError
-        elif position == 1:
-            return self.add_head(item)
-
 
         iterator = self.head
         counter = 1
@@ -84,11 +83,10 @@ class LinkedList:
             return data
 
     def remove_position(self,position:int) -> any:
+        if position == 1:
+            return self.remove_head()
         if position < 1 or position > self.size:
             raise IndexError
-        elif position == 1:
-            return self.remove_head()
-
 
         iterator = self.head
         counter = 1

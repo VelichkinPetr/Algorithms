@@ -22,7 +22,7 @@ class PriorityQueue:
 
     def enqueue(self,item:any) -> None: #Добавляет элемент в конец очереди.
         if isinstance(item,Task):
-            node = Node(data=item, next=None)
+            node = Node(data=item, next=None,prev = None)
             if self.is_empty():
                 self.head = node
                 self.tail = node

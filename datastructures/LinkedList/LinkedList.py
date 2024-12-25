@@ -1,5 +1,3 @@
-
-
 class LinkedList:
 
     class Node:

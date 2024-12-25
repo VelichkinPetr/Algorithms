@@ -1,5 +1,5 @@
 import pytest
-from DeQueue import DeQueue
+from datastructures.DeQueue import DeQueue
 
 @pytest.mark.parametrize('input_data, expected',
                          [
@@ -11,7 +11,7 @@ from DeQueue import DeQueue
                          ])
 
 def test_positive(input_data,expected):
-    dq = DeQueue()
+    dq = DeQueue.DeQueue()
     for i in range(1, input_data + 1):
         dq.pushBack(i)
     assert dq.peekBack() == expected
@@ -22,7 +22,7 @@ def test_positive(input_data,expected):
                          ])
 
 def test_bound(input_data,expected):
-    dq = DeQueue()
+    dq = DeQueue.DeQueue()
     dq.pushBack(input_data)
     dq.popBack()
     assert dq.peekBack() == expected

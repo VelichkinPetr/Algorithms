@@ -1,5 +1,5 @@
 import pytest
-from DoubleLinkedList import DoubleLinkedList
+from datastructures.DoubleLinkedList.DoubleLinkedList import DoubleLinkedList
 
 @pytest.mark.parametrize('input_data, expected',
                          [

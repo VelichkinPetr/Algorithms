@@ -1,11 +1,11 @@
-class Node:
-
-    def __init__(self, data, next= None, prev= None):
-        self.data = data
-        self.next = next
-        self.prev = prev
-
 class DoubleLinkedList:
+
+    class Node:
+
+        def __init__(self, data, next=None, prev=None):
+            self.data = data
+            self.next = next
+            self.prev = prev
 
     def __init__(self):
         self.size = 0
@@ -13,35 +13,35 @@ class DoubleLinkedList:
         self.tail = None
 
     def add_head(self,item:any)-> None:
-        node = Node(data=item, next=None)
+        node = DoubleLinkedList.Node(data=item, next=None)
 
         if self.is_empty():
-            self.head = node
             self.tail = node
         else:
             self.head.prev = node
             node.next = self.head
-            self.head = node
+
+        self.head = node
         self.size+=1
 
     def add(self,item:any)-> None:
-        node = Node(data=item, next=None)
+        node = DoubleLinkedList.Node(data=item, next=None)
 
         if self.is_empty():
             self.head = node
-            self.tail = node
         else:
             self.tail.next = node
             node.prev = self.tail
-            self.tail = node
 
+        self.tail = node
         self.size += 1
 
     def insert(self,item:any, position:int)-> None:
-        node = Node(data=item, next=None)
+        node = DoubleLinkedList.Node(data=item, next=None)
 
         if position == 1:
             return self.add_head(item)
+
         if position < 1 or position > self.size:
             raise IndexError
 
@@ -57,8 +57,10 @@ class DoubleLinkedList:
         self.size += 1
 
     def remove_head(self) -> any:
+
         if self.is_empty():
             return None
+
         data = self.head.data
         if self.size > 1:
             self.head = self.head.next
@@ -66,11 +68,14 @@ class DoubleLinkedList:
         else:
             self.head = None
         self.size -= 1
+
         return data
 
     def remove(self) -> any:
+
         if self.is_empty():
             return None
+
         data = self.tail.data
         if self.size > 1:
             self.tail = self.tail.prev
@@ -78,11 +83,14 @@ class DoubleLinkedList:
         else:
             self.tail = None
         self.size -= 1
+
         return data
 
     def remove_position(self,position:int) -> any:
+
         if position == 1:
             return self.remove_head()
+
         if position < 1 or position > self.size:
             raise IndexError
 
@@ -98,18 +106,22 @@ class DoubleLinkedList:
         iterator_next = iterator.next.next
         iterator.next = iterator_next
         self.size += 1
+
         return data
 
     def search(self, item:any) -> bool:
         if not self.is_empty():
             iterator = self.head
+
+            if iterator.data == item:
+                return True
+
             while iterator.next != None:
-                if iterator.data == item:
-                    return True
-                elif iterator.next.data == item:
+                if iterator.next.data == item:
                     return True
 
                 iterator = iterator.next
+
         return False
 
     def clear(self) -> None:
@@ -127,6 +139,7 @@ class DoubleLinkedList:
             while iterator.next!= None:
                 iterator = iterator.next
                 rez.append(iterator.data)
+
             return rez
-        else:
-            return []
+
+        return []

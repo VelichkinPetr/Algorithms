@@ -1,4 +1,5 @@
 class LinkedList:
+
     class Node:
 
         def __init__(self, data, next=None):
@@ -45,10 +46,13 @@ class LinkedList:
         iterator = self.__head
         if iterator.data[0] == key:
             return iterator.data[1]
+
         while iterator.next != None:
             if iterator.next.data[0] == key:
                 return iterator.next.data[1]
+
             iterator = iterator.next
+
         return None
 
     def print_LinkedList(self) -> list:
@@ -59,8 +63,8 @@ class LinkedList:
                 iterator = iterator.next
                 rez.append(iterator.data)
             return rez
-        else:
-            return []
+
+        return []
 
 class HashMap:
 

@@ -1,5 +1,5 @@
 import pytest
-from HashTable import LinkedList
+from datastructures.HashTable.HashTable import *
 
 @pytest.mark.parametrize('input_data, expected',
                          [

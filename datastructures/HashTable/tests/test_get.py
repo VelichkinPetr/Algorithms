@@ -1,5 +1,5 @@
 import pytest,random
-from HashTable import HashMap
+from datastructures.HashTable.HashTable import HashMap
 
 @pytest.mark.parametrize('input_data, expected',
                          [

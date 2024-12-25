@@ -1,5 +1,5 @@
 import pytest
-from Queue import Queue
+from datastructures.Queue.Queue import Queue
 
 @pytest.mark.parametrize('input_data, expected',
                          [

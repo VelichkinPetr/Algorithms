@@ -1,5 +1,5 @@
 import pytest
-from LinkedList import LinkedList
+from datastructures.LinkedList.LinkedList import LinkedList
 
 @pytest.mark.parametrize('input_data, expected',
                          [

@@ -1,5 +1,5 @@
 import pytest
-from Stack import Stack
+from datastructures.Stack.Stack import Stack
 
 @pytest.mark.parametrize('input_data, expected',
                          [

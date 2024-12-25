@@ -1,5 +1,5 @@
 import pytest
-from PriorityQueue import PriorityQueue, Task
+from datastructures.PriorityQueue.PriorityQueue import PriorityQueue, Task
 
 @pytest.mark.parametrize('input_data, expected',
                          [

@@ -1,4 +1,4 @@
-from DZ_4.task_3_PrintQueue import *
+from new_DZ_5.task_3_PrintQueue import *
 
 #Создал задачи
 doc1 = PrintDocument('1',111)

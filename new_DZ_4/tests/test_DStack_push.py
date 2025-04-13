@@ -1,5 +1,5 @@
 import pytest
-from new_DZ_3.DStack import DStack
+from new_DZ_4.DStack import DStack
 
 
 @pytest.fixture(scope= 'session')

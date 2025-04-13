@@ -1,5 +1,5 @@
 import pytest
-from new_DZ_3.DStack import DStack
+from new_DZ_4.DStack import DStack
 
 
 @pytest.fixture(scope= 'session')
@@ -27,9 +27,8 @@ def dynamic_stack():
 ])
 
 def test_positive(dynamic_stack,expected):
-    peek_data = dynamic_stack.peek()
-    dynamic_stack.pop()
-    assert peek_data == expected
+    print(dynamic_stack.get())
+    assert dynamic_stack.pop() == expected
 
 @pytest.mark.parametrize('expected',[
     None,
@@ -37,6 +36,5 @@ def test_positive(dynamic_stack,expected):
 ])
 
 def test_bound(dynamic_stack,expected):
-    peek_data = dynamic_stack.peek()
-    dynamic_stack.pop()
-    assert peek_data == expected
+    print(dynamic_stack.get())
+    assert dynamic_stack.pop() == expected

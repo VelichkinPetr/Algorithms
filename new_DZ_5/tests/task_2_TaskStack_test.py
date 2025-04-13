@@ -1,4 +1,4 @@
-from DZ_4.task_2_TaskStack import *
+from new_DZ_5.task_2_TaskStack import *
 
 #Создал задачи
 task1 = ProjectTask('1',(2020,10,17))

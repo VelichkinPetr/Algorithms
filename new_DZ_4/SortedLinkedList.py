@@ -8,9 +8,15 @@ class SortedLinkedList:
             self.data = data
             self.next = next
 
-    def __init__(self):
-        self._size = 0
-        self._head = None
+    def __init__(self, sort_list = None):
+
+        if isinstance(sort_list, SortedLinkedList):
+            self._size = sort_list._size
+            self._head = sort_list._head
+        else:
+            self._size = 0
+            self._head = None
+
 
     def add(self, item: any) -> None:
 
@@ -208,4 +214,3 @@ class SortedLinkedList:
             return rez
 
         return []
-

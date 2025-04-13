@@ -1,4 +1,4 @@
-from DZ_4.task_1_PersonList import *
+from new_DZ_5.task_1_PersonList import *
 
 #Создал карточки
 Ivan = PersonCard('Ivan', 25, 'teacher')
